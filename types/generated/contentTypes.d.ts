@@ -412,6 +412,109 @@ export interface ApiArticleArticle extends Schema.CollectionType {
   };
 }
 
+export interface ApiBeerBeer extends Schema.CollectionType {
+  collectionName: 'beers';
+  info: {
+    displayName: 'Beer';
+    pluralName: 'beers';
+    singularName: 'beer';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    abv: Attribute.Decimal;
+    brewingProgress: Attribute.Integer;
+    category: Attribute.Relation<
+      'api::beer.beer',
+      'manyToOne',
+      'api::category.category'
+    >;
+    createdAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<'api::beer.beer', 'oneToOne', 'admin::user'> &
+      Attribute.Private;
+    description: Attribute.Text;
+    drop: Attribute.Relation<'api::beer.beer', 'manyToOne', 'api::drop.drop'>;
+    hops: Attribute.String;
+    isKhmerIngredients: Attribute.Boolean;
+    isNowBrewing: Attribute.Boolean;
+    label: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    malts: Attribute.String;
+    name: Attribute.String;
+    publishedAt: Attribute.DateTime;
+    specialIngredients: Attribute.String;
+    tags: Attribute.Relation<'api::beer.beer', 'manyToMany', 'api::tag.tag'>;
+    updatedAt: Attribute.DateTime;
+    updatedBy: Attribute.Relation<'api::beer.beer', 'oneToOne', 'admin::user'> &
+      Attribute.Private;
+    yeast: Attribute.String;
+  };
+}
+
+export interface ApiCategoryCategory extends Schema.CollectionType {
+  collectionName: 'categories';
+  info: {
+    displayName: 'Category';
+    pluralName: 'categories';
+    singularName: 'category';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    beers: Attribute.Relation<
+      'api::category.category',
+      'oneToMany',
+      'api::beer.beer'
+    >;
+    createdAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::category.category',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    description: Attribute.String;
+    metaDescription: Attribute.String;
+    metaTitle: Attribute.Text;
+    name: Attribute.String;
+    publishedAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    updatedBy: Attribute.Relation<
+      'api::category.category',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiDropDrop extends Schema.CollectionType {
+  collectionName: 'drops';
+  info: {
+    displayName: 'Drop';
+    pluralName: 'drops';
+    singularName: 'drop';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    beers: Attribute.Relation<'api::drop.drop', 'oneToMany', 'api::beer.beer'>;
+    createdAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<'api::drop.drop', 'oneToOne', 'admin::user'> &
+      Attribute.Private;
+    description: Attribute.Text;
+    metaDescription: Attribute.Text;
+    metaTitle: Attribute.Text;
+    name: Attribute.String;
+    publishedAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    updatedBy: Attribute.Relation<'api::drop.drop', 'oneToOne', 'admin::user'> &
+      Attribute.Private;
+  };
+}
+
 export interface ApiTagTag extends Schema.CollectionType {
   collectionName: 'tags';
   info: {
@@ -428,6 +531,7 @@ export interface ApiTagTag extends Schema.CollectionType {
       'manyToMany',
       'api::article.article'
     >;
+    beers: Attribute.Relation<'api::tag.tag', 'manyToMany', 'api::beer.beer'>;
     createdAt: Attribute.DateTime;
     createdBy: Attribute.Relation<'api::tag.tag', 'oneToOne', 'admin::user'> &
       Attribute.Private;
@@ -876,6 +980,9 @@ declare module '@strapi/types' {
       'admin::transfer-token-permission': AdminTransferTokenPermission;
       'admin::user': AdminUser;
       'api::article.article': ApiArticleArticle;
+      'api::beer.beer': ApiBeerBeer;
+      'api::category.category': ApiCategoryCategory;
+      'api::drop.drop': ApiDropDrop;
       'api::tag.tag': ApiTagTag;
       'plugin::content-releases.release': PluginContentReleasesRelease;
       'plugin::content-releases.release-action': PluginContentReleasesReleaseAction;

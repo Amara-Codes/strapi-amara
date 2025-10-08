@@ -19,6 +19,12 @@
     },
     "Name": {
       "type": "string"
+    },
+    "beers": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::beer.beer",
+      "mappedBy": "tags"
     }
   }
 }

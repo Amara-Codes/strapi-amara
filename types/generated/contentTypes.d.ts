@@ -454,6 +454,7 @@ export interface ApiBeerBeer extends Schema.CollectionType {
 export interface ApiCategoryCategory extends Schema.CollectionType {
   collectionName: 'categories';
   info: {
+    description: '';
     displayName: 'Category';
     pluralName: 'categories';
     singularName: 'category';
@@ -474,7 +475,7 @@ export interface ApiCategoryCategory extends Schema.CollectionType {
       'admin::user'
     > &
       Attribute.Private;
-    description: Attribute.String;
+    description: Attribute.Text;
     metaDescription: Attribute.String;
     metaTitle: Attribute.Text;
     name: Attribute.String;

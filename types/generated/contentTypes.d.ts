@@ -516,6 +516,36 @@ export interface ApiDropDrop extends Schema.CollectionType {
   };
 }
 
+export interface ApiGalleryGallery extends Schema.SingleType {
+  collectionName: 'galleries';
+  info: {
+    displayName: 'Gallery';
+    pluralName: 'galleries';
+    singularName: 'gallery';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::gallery.gallery',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    images: Attribute.Media<'images' | 'files' | 'videos' | 'audios', true>;
+    publishedAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    updatedBy: Attribute.Relation<
+      'api::gallery.gallery',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiTagTag extends Schema.CollectionType {
   collectionName: 'tags';
   info: {
@@ -984,6 +1014,7 @@ declare module '@strapi/types' {
       'api::beer.beer': ApiBeerBeer;
       'api::category.category': ApiCategoryCategory;
       'api::drop.drop': ApiDropDrop;
+      'api::gallery.gallery': ApiGalleryGallery;
       'api::tag.tag': ApiTagTag;
       'plugin::content-releases.release': PluginContentReleasesRelease;
       'plugin::content-releases.release-action': PluginContentReleasesReleaseAction;

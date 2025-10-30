@@ -31,19 +31,15 @@ export interface FunctionalComponentHeroButton extends Schema.Component {
   };
 }
 
-export interface GraphicComponentCarousel extends Schema.Component {
-  collectionName: 'components_graphic_component_carousels';
+export interface GraphicComponentGalleryImage extends Schema.Component {
+  collectionName: 'components_graphic_component_gallery_images';
   info: {
-    displayName: 'Carousel';
+    displayName: 'GalleryImage';
+    icon: 'landscape';
   };
   attributes: {
-    CarouselCssClasses: Attribute.String;
-    CarouselImgs: Attribute.Media<
-      'images' | 'files' | 'videos' | 'audios',
-      true
-    >;
-    CarouselSubtitle: Attribute.String;
-    CarouselTitle: Attribute.String;
+    alt: Attribute.String;
+    image: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
   };
 }
 
@@ -101,7 +97,7 @@ declare module '@strapi/types' {
     export interface Components {
       'functional-component.cta': FunctionalComponentCta;
       'functional-component.hero-button': FunctionalComponentHeroButton;
-      'graphic-component.carousel': GraphicComponentCarousel;
+      'graphic-component.gallery-image': GraphicComponentGalleryImage;
       'graphic-component.hero': GraphicComponentHero;
       'text-component.paragraph': TextComponentParagraph;
       'text-component.quote': TextComponentQuote;

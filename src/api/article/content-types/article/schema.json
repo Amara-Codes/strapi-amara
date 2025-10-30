@@ -48,7 +48,6 @@
         "graphic-component.hero",
         "text-component.paragraph",
         "text-component.quote",
-        "graphic-component.carousel",
         "functional-component.cta"
       ]
     },

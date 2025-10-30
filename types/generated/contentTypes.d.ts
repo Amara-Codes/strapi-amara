@@ -381,7 +381,6 @@ export interface ApiArticleArticle extends Schema.CollectionType {
         'graphic-component.hero',
         'text-component.paragraph',
         'text-component.quote',
-        'graphic-component.carousel',
         'functional-component.cta'
       ]
     >;
@@ -519,6 +518,7 @@ export interface ApiDropDrop extends Schema.CollectionType {
 export interface ApiGalleryGallery extends Schema.SingleType {
   collectionName: 'galleries';
   info: {
+    description: '';
     displayName: 'Gallery';
     pluralName: 'galleries';
     singularName: 'gallery';
@@ -534,7 +534,7 @@ export interface ApiGalleryGallery extends Schema.SingleType {
       'admin::user'
     > &
       Attribute.Private;
-    images: Attribute.Media<'images' | 'files' | 'videos' | 'audios', true>;
+    GalleryImage: Attribute.Component<'graphic-component.gallery-image', true>;
     publishedAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     updatedBy: Attribute.Relation<

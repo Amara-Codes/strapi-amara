@@ -1,0 +1,23 @@
+{
+  "collectionName": "components_graphic_component_gallery_images",
+  "info": {
+    "displayName": "GalleryImage",
+    "icon": "landscape"
+  },
+  "options": {},
+  "attributes": {
+    "alt": {
+      "type": "string"
+    },
+    "image": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
+    }
+  }
+}

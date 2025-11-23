@@ -30,11 +30,11 @@ module.exports = ({ env }) => ({
           // Se per qualche motivo il provider non supporta 'url' direttamente:
           
           connection: {
-           url: env("REDIS_URL"), 
-            //host: env("REDIS_HOST", "127.0.0.1"), 
-            //port: env.int("REDIS_PORT", 6379),
-            //db: env.int("REDIS_DB", 0),
-            //password: env("REDIS_PASSWORD"), 
+            host: env("REDIS_HOST"), 
+            password: env("REDIS_PASSWORD"), 
+            user: 'default',
+            database: 0,
+            port: env("REDIS_PORT", 6379),
           },
           
           settings: {

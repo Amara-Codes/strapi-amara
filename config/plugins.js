@@ -25,7 +25,7 @@ module.exports = ({ env }) => ({
         default: {
           // 💡 PUNTO CHIAVE: Uso della proprietà 'url' invece di 'connection'
           // per accettare l'URI completo di Redis.
-          url: env("REDIS_PUBLIC_URL" ), 
+          url: 'redis://default:IiqeAZIqusWnQMfcDvPeZPictwdIDkmT@redis.railway.internal:6379', 
 
           // Se per qualche motivo il provider non supporta 'url' direttamente:
           /*

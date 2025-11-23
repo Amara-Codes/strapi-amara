@@ -749,6 +749,11 @@
   dependencies:
     "@swc/helpers" "^0.5.0"
 
+"@ioredis/commands@^1.0.2", "@ioredis/commands@^1.1.1":
+  version "1.5.0"
+  resolved "https://registry.npmjs.org/@ioredis/commands/-/commands-1.5.0.tgz"
+  integrity sha512-eUgLqrMf8nJkZxT24JvVRrQya1vZkQh8BBeYNwGDqa5I0VUi8ACx7uFvAaLxintokpTenkK6DASvo/bvNbBGow==
+
 "@isaacs/cliui@^8.0.2":
   version "8.0.2"
   resolved "https://registry.npmjs.org/@isaacs/cliui/-/cliui-8.0.2.tgz"
@@ -813,7 +818,7 @@
   dependencies:
     vary "^1.1.2"
 
-"@koa/router@10.1.1":
+"@koa/router@^10.1.1", "@koa/router@10.1.1":
   version "10.1.1"
   resolved "https://registry.npmjs.org/@koa/router/-/router-10.1.1.tgz"
   integrity sha512-ORNjq5z4EmQPriKbR0ER3k4Gh7YGNhWDL7JBW+8wXDrHLbWYKYSJaOJ9aN06npF5tbTxe2JBOsurpJDAvjiXKw==
@@ -2027,7 +2032,7 @@
     "@strapi/utils" "4.25.16"
     fs-extra "10.0.0"
 
-"@strapi/strapi@^4.0.0", "@strapi/strapi@^4.15.1", "@strapi/strapi@^4.25.16", "@strapi/strapi@^4.3.4", "@strapi/strapi@4.25.16":
+"@strapi/strapi@^4.0.0", "@strapi/strapi@^4.0.5", "@strapi/strapi@^4.15.1", "@strapi/strapi@^4.25.16", "@strapi/strapi@^4.3.4", "@strapi/strapi@4.25.16":
   version "4.25.16"
   resolved "https://registry.npmjs.org/@strapi/strapi/-/strapi-4.25.16.tgz"
   integrity sha512-GUQqGeOeUpXBXpo4THN5l18+zeBM5sTfghBs/TrYSNZuFlS8xyiZ23LxHIJ9rn87DjUoiUuMPCJiAiSN12ctXA==
@@ -2997,6 +3002,11 @@ async@^3.2.3:
   resolved "https://registry.npmjs.org/async/-/async-3.2.6.tgz"
   integrity sha512-htCUDlxyyCLMgaM3xXg0C0LW2xqfuQ6p05pCEIsXuyQ+a1koYKTuBMzRNwmybfLgvJDMd0r1LTn4+E0Ti6C2AA==
 
+async@3.2.3:
+  version "3.2.3"
+  resolved "https://registry.npmjs.org/async/-/async-3.2.3.tgz"
+  integrity sha512-spZRyzKL5l5BZQrr/6m/SqFdBN0q3OCI0f9rjfBzCMBIP4p75P620rR3gTmaksNOhmzgdxcaxdNfMy6anrbM0g==
+
 asynckit@^0.4.0:
   version "0.4.0"
   resolved "https://registry.npmjs.org/asynckit/-/asynckit-0.4.0.tgz"
@@ -3306,6 +3316,22 @@ cache-content-type@^1.0.0:
     mime-types "^2.1.18"
     ylru "^1.2.0"
 
+cache-manager-ioredis@^2.1.0:
+  version "2.1.0"
+  resolved "https://registry.npmjs.org/cache-manager-ioredis/-/cache-manager-ioredis-2.1.0.tgz"
+  integrity sha512-TCxbp9ceuFveTKWuNaCX8QjoC41rAlHen4s63u9Yd+iXlw3efYmimc/u935PKPxSdhkXpnMes4mxtK3/yb0L4g==
+  dependencies:
+    ioredis "^4.14.1"
+
+cache-manager@^3.6.0:
+  version "3.6.3"
+  resolved "https://registry.npmjs.org/cache-manager/-/cache-manager-3.6.3.tgz"
+  integrity sha512-dS4DnV6c6cQcVH5OxzIU1XZaACXwvVIiUPkFytnRmLOACuBGv3GQgRQ1RJGRRw4/9DF14ZK2RFlZu1TUgDniMg==
+  dependencies:
+    async "3.2.3"
+    lodash.clonedeep "^4.5.0"
+    lru-cache "6.0.0"
+
 cacheable-lookup@^5.0.3:
   version "5.0.4"
   resolved "https://registry.npmjs.org/cacheable-lookup/-/cacheable-lookup-5.0.4.tgz"
@@ -3583,6 +3609,11 @@ cloudinary@^1.41.0:
     core-js "^3.30.1"
     lodash "^4.17.21"
     q "^1.5.1"
+
+cluster-key-slot@^1.1.0:
+  version "1.1.2"
+  resolved "https://registry.npmjs.org/cluster-key-slot/-/cluster-key-slot-1.1.2.tgz"
+  integrity sha512-RMr0FhtfXemyinomL4hrWcYJxmX6deFdCxpJzhDttxgO1+bcCnkk+9drydLVDmAMG7NE6aN/fl4F7ucU/90gAA==
 
 co-body@^5.1.1:
   version "5.2.0"
@@ -4187,6 +4218,16 @@ delegates@^1.0.0, delegates@1.0.0:
   version "1.0.0"
   resolved "https://registry.npmjs.org/delegates/-/delegates-1.0.0.tgz"
   integrity sha512-bd2L678uiWATM6m5Z1VzNCErI3jiGzt6HGY8OVICs40JQq/HALfbyNJmp0UDakEY4pMMaN0Ly5om/B1VI/+xfQ==
+
+denque@^1.1.0:
+  version "1.5.1"
+  resolved "https://registry.npmjs.org/denque/-/denque-1.5.1.tgz"
+  integrity sha512-XwE+iZ4D6ZUB7mfYRMb5wByE8L74HCn30FBN7sWnXksWc1LO1bPDl67pBR9o/kC4z/xSNAwkMYcGgqDV3BE3Hw==
+
+denque@^2.0.1:
+  version "2.1.0"
+  resolved "https://registry.npmjs.org/denque/-/denque-2.1.0.tgz"
+  integrity sha512-HVQE3AAb/pxF8fQAoiqpvg9i3evqug3hoiwakOyZAwJm+6vZehbkYXZ0l4JxS+I3QxM97v5aaRNhj8v5oBhekw==
 
 depd@^2.0.0:
   version "2.0.0"
@@ -5814,6 +5855,38 @@ invariant@^2.2.4:
   dependencies:
     loose-envify "^1.0.0"
 
+ioredis@^4.14.1:
+  version "4.30.1"
+  resolved "https://registry.npmjs.org/ioredis/-/ioredis-4.30.1.tgz"
+  integrity sha512-17Ed70njJ7wT7JZsdTVLb0j/cmwHwfQCFu+AP6jY7nFKd+CA7MBW7nX121mM64eT8S9ekAVtYYt8nGQPmm3euA==
+  dependencies:
+    "@ioredis/commands" "^1.0.2"
+    cluster-key-slot "^1.1.0"
+    debug "^4.3.1"
+    denque "^1.1.0"
+    lodash.defaults "^4.2.0"
+    lodash.flatten "^4.4.0"
+    lodash.isarguments "^3.1.0"
+    p-map "^2.1.0"
+    redis-errors "^1.2.0"
+    redis-parser "^3.0.0"
+    standard-as-callback "^2.1.0"
+
+ioredis@5.2.4:
+  version "5.2.4"
+  resolved "https://registry.npmjs.org/ioredis/-/ioredis-5.2.4.tgz"
+  integrity sha512-qIpuAEt32lZJQ0XyrloCRdlEdUUNGG9i0UOk6zgzK6igyudNWqEBxfH6OlbnOOoBBvr1WB02mm8fR55CnikRng==
+  dependencies:
+    "@ioredis/commands" "^1.1.1"
+    cluster-key-slot "^1.1.0"
+    debug "^4.3.4"
+    denque "^2.0.1"
+    lodash.defaults "^4.2.0"
+    lodash.isarguments "^3.1.0"
+    redis-errors "^1.2.0"
+    redis-parser "^3.0.0"
+    standard-as-callback "^2.1.0"
+
 is-absolute@^1.0.0:
   version "1.0.0"
   resolved "https://registry.npmjs.org/is-absolute/-/is-absolute-1.0.0.tgz"
@@ -6635,10 +6708,25 @@ lodash.deburr@^4.1.0:
   resolved "https://registry.npmjs.org/lodash.deburr/-/lodash.deburr-4.1.0.tgz"
   integrity sha512-m/M1U1f3ddMCs6Hq2tAsYThTBDaAKFDX3dwDo97GEYzamXi9SqUpjWi/Rrj/gf3X2n8ktwgZrlP1z6E3v/IExQ==
 
+lodash.defaults@^4.2.0:
+  version "4.2.0"
+  resolved "https://registry.npmjs.org/lodash.defaults/-/lodash.defaults-4.2.0.tgz"
+  integrity sha512-qjxPLHd3r5DnsdGacqOMU6pb/avJzdh9tFX2ymgoZE27BmjXrNy/y4LoaiTeAb+O3gL8AfpJGtqfX/ae2leYYQ==
+
+lodash.flatten@^4.4.0:
+  version "4.4.0"
+  resolved "https://registry.npmjs.org/lodash.flatten/-/lodash.flatten-4.4.0.tgz"
+  integrity sha512-C5N2Z3DgnnKr0LOpv/hKCgKdb7ZZwafIrsesve6lmzvZIRZRGaZ/l6Q8+2W7NaT+ZwO3fFlSCzCzrDCFdJfZ4g==
+
 lodash.get@^4.4.2:
   version "4.4.2"
   resolved "https://registry.npmjs.org/lodash.get/-/lodash.get-4.4.2.tgz"
   integrity sha512-z+Uw/vLuy6gQe8cfaFWD7p0wVv8fJl3mbzXh33RS+0oW2wvUqiRXiQ69gLWSLpgB5/6sU+r6BlQR0MBILadqTQ==
+
+lodash.isarguments@^3.1.0:
+  version "3.1.0"
+  resolved "https://registry.npmjs.org/lodash.isarguments/-/lodash.isarguments-3.1.0.tgz"
+  integrity sha512-chi4NHZlZqZD18a0imDHnZPrDeBbTtVN7GXMwuGdRH9qotxAjYs3aVLKc7zNOG9eddR5Ksd8rvFEBc9SsggPpg==
 
 lodash.isplainobject@4.0.6:
   version "4.0.6"
@@ -7566,6 +7654,11 @@ p-locate@^5.0.0:
   dependencies:
     p-limit "^3.0.2"
 
+p-map@^2.1.0:
+  version "2.1.0"
+  resolved "https://registry.npmjs.org/p-map/-/p-map-2.1.0.tgz"
+  integrity sha512-y3b8Kpd8OAN444hxfBbFfj1FY/RjtTd8tzYwhUqNYXx0fXx2iX4maP4Qr6qhIKbQXI02wTLAda4fYUbDagTUFw==
+
 p-map@^3.0.0:
   version "3.0.0"
   resolved "https://registry.npmjs.org/p-map/-/p-map-3.0.0.tgz"
@@ -7790,6 +7883,14 @@ path-type@^4.0.0:
   version "4.0.0"
   resolved "https://registry.npmjs.org/path-type/-/path-type-4.0.0.tgz"
   integrity sha512-gDKb8aZMDeD/tZWs9P6+q0J9Mwkdl6xMV8TjnGP3qJVJ06bdMgkbBlLU8IdfOsIsFz2BW1rNVT3XuNEl8zPAvw==
+
+path@^0.12.7:
+  version "0.12.7"
+  resolved "https://registry.npmjs.org/path/-/path-0.12.7.tgz"
+  integrity sha512-aXXC6s+1w7otVF9UletFkFcDsJeO7lSZBPUQhtb5O0xJe8LtYhj/GxldoL09bBj9+ZmE2hNoHqQSFMN5fikh4Q==
+  dependencies:
+    process "^0.11.1"
+    util "^0.10.3"
 
 pause@0.0.1:
   version "0.0.1"
@@ -8020,6 +8121,11 @@ process-nextick-args@~2.0.0:
   version "2.0.1"
   resolved "https://registry.npmjs.org/process-nextick-args/-/process-nextick-args-2.0.1.tgz"
   integrity sha512-3ouUOpQhtgrbOa17J7+uxOTpITYWaGP7/AhoR3+A+/1e9skrzelGi/dXzEYyvbxubEF6Wn2ypscTKiKJFFn1ag==
+
+process@^0.11.1:
+  version "0.11.10"
+  resolved "https://registry.npmjs.org/process/-/process-0.11.10.tgz"
+  integrity sha512-cdGef/drWFoydD1JsMzuFf8100nZl+GT+yacc2bEced5f9Rjk4z+WtFUTBu9PhOi9j/jfmBPu0mMEY4wIdAF8A==
 
 progress-stream@^2.0.0:
   version "2.0.0"
@@ -8475,6 +8581,18 @@ rechoir@^0.8.0:
   integrity sha512-/vxpCXddiX8NGfGO/mTafwjq4aFa/71pvamip0++IQk3zG8cbCj0fifNPrjjF1XMXUne91jL9OoxmdykoEtifQ==
   dependencies:
     resolve "^1.20.0"
+
+redis-errors@^1.0.0, redis-errors@^1.2.0:
+  version "1.2.0"
+  resolved "https://registry.npmjs.org/redis-errors/-/redis-errors-1.2.0.tgz"
+  integrity sha512-1qny3OExCf0UvUV/5wpYKf2YwPcOqXzkwKKSmKHiE6ZMQs5heeE/c8eXK+PNllPvmjgAbfnsbpkGZWy8cBpn9w==
+
+redis-parser@^3.0.0:
+  version "3.0.0"
+  resolved "https://registry.npmjs.org/redis-parser/-/redis-parser-3.0.0.tgz"
+  integrity sha512-DJnGAeenTdpMEH6uAJRK/uiyEIH9WVsUmoLwzudwGJUwZPp80PDBWPHXSAGNPwNvIXAbe7MSUB1zQFugFml66A==
+  dependencies:
+    redis-errors "^1.0.0"
 
 redux-thunk@^2.4.2:
   version "2.4.2"
@@ -9259,6 +9377,11 @@ stackframe@^1.3.4:
   resolved "https://registry.npmjs.org/stackframe/-/stackframe-1.3.4.tgz"
   integrity sha512-oeVtt7eWQS+Na6F//S4kJ2K2VbRlS9D43mAlMyVpVWovy9o+jfgH8O9agzANzaiLjclA0oYzUXEM4PurhSUChw==
 
+standard-as-callback@^2.1.0:
+  version "2.1.0"
+  resolved "https://registry.npmjs.org/standard-as-callback/-/standard-as-callback-2.1.0.tgz"
+  integrity sha512-qoRRSyROncaz1z0mvYqIE4lCd9p2R90i6GxW3uZv5ucSu8tU7B5HXUP1gG8pVZsYNVaXjk8ClXHPttLyxAL48A==
+
 static-extend@^0.1.1:
   version "0.1.2"
   resolved "https://registry.npmjs.org/static-extend/-/static-extend-0.1.2.tgz"
@@ -9286,6 +9409,42 @@ statuses@^2.0.1, statuses@2.0.1:
   version "1.5.0"
   resolved "https://registry.npmjs.org/statuses/-/statuses-1.5.0.tgz"
   integrity sha512-OpZ3zP+jT1PI7I8nemJX4AKmAX070ZkYPVWV/AaKTJl+tXCTGyVdC1a4SL8RUQYEwk/f34ZX8UTykN68FwrqAA==
+
+strapi-plugin-redis@^1.1.0:
+  version "1.1.0"
+  resolved "https://registry.npmjs.org/strapi-plugin-redis/-/strapi-plugin-redis-1.1.0.tgz"
+  integrity sha512-7a7iJkpPH/G8PvkprU912R4HqxSYDgCSMPySxAkFZ7b4NpzssAiYXDf2iYRzLbi1D1Dy9oh+xnyYLd7OBmOLTw==
+  dependencies:
+    chalk "4.1.2"
+    debug "4.3.4"
+    ioredis "5.2.4"
+
+strapi-plugin-rest-cache@^4.0.0, strapi-plugin-rest-cache@^4.2.9:
+  version "4.2.9"
+  resolved "https://registry.npmjs.org/strapi-plugin-rest-cache/-/strapi-plugin-rest-cache-4.2.9.tgz"
+  integrity sha512-v9g2sCgxloX3HHBk1CIDuVPnSXVMstEYhbCDi7ZUsCRCZltzIJv6Unonc65vigopzKKYUVJnwEJQj0o/LdrLDg==
+  dependencies:
+    "@koa/router" "^10.1.1"
+    chalk "^4.1.2"
+    debug "^4.3.4"
+    lodash "^4.17.21"
+    path "^0.12.7"
+    strapi-provider-rest-cache-memory "^4.2.9"
+
+strapi-provider-rest-cache-memory@^4.2.9:
+  version "4.2.9"
+  resolved "https://registry.npmjs.org/strapi-provider-rest-cache-memory/-/strapi-provider-rest-cache-memory-4.2.9.tgz"
+  integrity sha512-BLumxd6OwLqmlQI5HqauN6c86ig59Co8jUHTlFC5waytQM5zyOZnIt5Ody4Qdc6yeMi726EFyI7yUF7L/DaQ9A==
+  dependencies:
+    cache-manager "^3.6.0"
+
+strapi-provider-rest-cache-redis@^4.2.9:
+  version "4.2.9"
+  resolved "https://registry.npmjs.org/strapi-provider-rest-cache-redis/-/strapi-provider-rest-cache-redis-4.2.9.tgz"
+  integrity sha512-Yo4wdFpMfn8IdxNQ9rvVFlJ0MueNvI6SeRPRrES8+dW6MEG3uhVdz5N0O/sa/Ll87OqOp/uFy88onvrGJnpBKA==
+  dependencies:
+    cache-manager "^3.6.0"
+    cache-manager-ioredis "^2.1.0"
 
 stream-chain@^2.2.5, stream-chain@2.2.5:
   version "2.2.5"
@@ -10015,6 +10174,13 @@ util-deprecate@^1.0.1, util-deprecate@^1.0.2, util-deprecate@~1.0.1:
   version "1.0.2"
   resolved "https://registry.npmjs.org/util-deprecate/-/util-deprecate-1.0.2.tgz"
   integrity sha512-EPD5q1uXyFxJpCrLnCc1nHnq3gOa6DZBocAIiI2TaSCA7VCJ1UJDMagCzIkXNsUYfD1daK//LTEQ8xiIbrHtcw==
+
+util@^0.10.3:
+  version "0.10.4"
+  resolved "https://registry.npmjs.org/util/-/util-0.10.4.tgz"
+  integrity sha512-0Pm9hTQ3se5ll1XihRic3FDIku70C+iHUdT/W926rSgHV5QgXsYbKZN8MSC3tJtSkhuROzvsQjAaFENRXr+19A==
+  dependencies:
+    inherits "2.0.3"
 
 utila@~0.4:
   version "0.4.0"

@@ -1,20 +1,71 @@
 module.exports = ({ env }) => ({
-  'users-permissions': {
+  "users-permissions": {
     config: {
-      jwtSecret: env('JWT_SECRET'),
+      jwtSecret: env("JWT_SECRET"),
     },
   },
   upload: {
     config: {
-      provider: 'cloudinary',
+      provider: "cloudinary",
       providerOptions: {
-        cloud_name: env('CLOUDINARY_NAME'),
-        api_key: env('CLOUDINARY_KEY'),
-        api_secret: env('CLOUDINARY_SECRET'),
+        cloud_name: env("CLOUDINARY_NAME"),
+        api_key: env("CLOUDINARY_KEY"),
+        api_secret: env("CLOUDINARY_SECRET"),
       },
       actionOptions: {
         upload: {},
         delete: {},
+      },
+    },
+  },
+  // Configurazione Redis: Legge TUTTI i dati dalla variabili d'ambiente
+  redis: {
+    config: {
+      connections: {
+        default: {
+          // 💡 PUNTO CHIAVE: Uso della proprietà 'url' invece di 'connection'
+          // per accettare l'URI completo di Redis.
+          url: env("REDIS_URL"), 
+
+          // Se per qualche motivo il provider non supporta 'url' direttamente:
+          /*
+          connection: {
+            host: env("REDIS_HOST", "127.0.0.1"), 
+            port: env.int("REDIS_PORT", 6379),
+            db: env.int("REDIS_DB", 0),
+            password: env("REDIS_PASSWORD"), 
+          },
+          */
+          settings: {
+            debug: false,
+          },
+        },
+      },
+    },
+  },
+  // Configurazione del plugin di caching REST
+  "rest-cache": {
+    config: {
+      provider: {
+        name: "redis",
+        options: {
+          max: 32767,
+          connection: "default",
+        },
+      },
+      strategy: {
+        enableEtagSupport: true,
+        logs: true,
+        clearRelatedCache: true,
+        maxAge: 864000000, // 24 hours
+        contentTypes: [
+          // Aggiungi tutti i tuoi Content Types
+          "api::category.category",
+          "api::article.article",
+          "api::beer.beer",
+          "api::drop.drop",
+          "api::gallery.gallery",
+        ],
       },
     },
   },

@@ -18,54 +18,30 @@ module.exports = ({ env }) => ({
       },
     },
   },
-  // Configurazione Redis: Legge TUTTI i dati dalla variabili d'ambiente
-  redis: {
-    config: {
-      connections: {
-        default: {
-          // 💡 PUNTO CHIAVE: Uso della proprietà 'url' invece di 'connection'
-          // per accettare l'URI completo di Redis.
-         
-
-          // Se per qualche motivo il provider non supporta 'url' direttamente:
-          
-          connection: {
-            host: env("REDIS_HOST"), 
-            password: env("REDIS_PASSWORD"), 
-            user: 'default',
-            database: 0,
-            port: env("REDIS_PORT", 6379),
-          },
-          
-          settings: {
-            debug: false,
-          },
-        },
-      },
-    },
-  },
-  // Configurazione del plugin di caching REST
   "rest-cache": {
     config: {
       provider: {
-        name: "redis",
+        name: "memory",
+        getTimeout: 500,
         options: {
-          max: 32767,
-          connection: "default",
+          // The time to live in milliseconds. This is the maximum amount of time that an item can be in the cache before it is removed.
+          ttl: 3600 * 1000,
+          // The maximum number of items before evicting the least recently used items.
+          maxSize: 32767,
+          // ...
         },
       },
-      strategy: {
-        enableEtagSupport: true,
-        logs: true,
-        clearRelatedCache: true,
-        maxAge: 864000000, // 24 hours
+      strategy: /* @type {CachePluginStrategy} */ {
+        keysPrefix: "ablv2",
+        maxAge: 86400000, // The maximum age of a cached item in milliseconds. Here, it's set to 24 hours.
+        debug: false,
         contentTypes: [
-          // Aggiungi tutti i tuoi Content Types
-          "api::category.category",
           "api::article.article",
-          "api::beer.beer",
+          "api::category.category",
           "api::drop.drop",
-          "api::gallery.gallery",
+          "api::beer.beer",
+          "api::article.article",
+          "api::tag.tag",
         ],
       },
     },

@@ -4,7 +4,8 @@
   "info": {
     "singularName": "beer",
     "pluralName": "beers",
-    "displayName": "Beer"
+    "displayName": "Beer",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -27,14 +28,15 @@
       "type": "boolean"
     },
     "label": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
       "allowedTypes": [
         "images",
         "files",
         "videos",
         "audios"
-      ],
-      "type": "media",
-      "multiple": false
+      ]
     },
     "brewingProgress": {
       "type": "integer"
@@ -68,6 +70,16 @@
       "relation": "manyToOne",
       "target": "api::drop.drop",
       "inversedBy": "beers"
+    },
+    "rendering": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
     }
   }
 }

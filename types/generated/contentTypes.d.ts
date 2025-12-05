@@ -414,6 +414,7 @@ export interface ApiArticleArticle extends Schema.CollectionType {
 export interface ApiBeerBeer extends Schema.CollectionType {
   collectionName: 'beers';
   info: {
+    description: '';
     displayName: 'Beer';
     pluralName: 'beers';
     singularName: 'beer';
@@ -441,6 +442,7 @@ export interface ApiBeerBeer extends Schema.CollectionType {
     malts: Attribute.String;
     name: Attribute.String;
     publishedAt: Attribute.DateTime;
+    rendering: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
     specialIngredients: Attribute.String;
     tags: Attribute.Relation<'api::beer.beer', 'manyToMany', 'api::tag.tag'>;
     updatedAt: Attribute.DateTime;
